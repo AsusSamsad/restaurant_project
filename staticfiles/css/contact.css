@@ -1,0 +1,473 @@
+/* 🌟 Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 5%;
+    background: rgba(0, 50, 0, 0.8); /* Green Glass Effect */
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    position: sticky;
+    top: 0;
+    width: 90%;
+    margin: 10px auto;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* 🌟 Logo Styling */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+/* 🌟 Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    background: linear-gradient(145deg, #00ff00, #007700);
+    box-shadow: 3px 3px 8px rgba(0, 255, 0, 0.5);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* 🌟 Hover Effect */
+.nav-links li a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+}
+
+/* 🌟 Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: rgba(0, 50, 0, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+    box-shadow: 0 4px 10px rgba(0, 255, 0, 0.5);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* 🌟 Dropdown Menu Fix */
+.dropdown-menu li {
+    margin-bottom: 5px; /* Items के बीच Space */
+}
+
+.dropdown-menu li:last-child {
+    margin-bottom: 0; /* Last Item के नीचे Extra Space न हो */
+}
+
+/* 🌟 Dropdown Items Spacing */
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 15px; /* अंदर Space बढ़ाएँ */
+    border-radius: 8px;
+}
+
+
+/* 🌟 Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+/* 🌟 Mobile Responsive Navbar */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 5%;
+        background: rgba(0, 50, 0, 0.9);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* 🌟 Hamburger Animation */
+    .hamburger.active {
+        transform: rotate(90deg);
+    }
+}
+
+
+
+/* 🌟 Footer Section */
+#footer {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px); /* Glassmorphism Effect */
+    color: white;
+    padding: 50px 10%;
+    border-radius: 15px 15px 0 0;
+}
+
+/* 🌟 Fix: Footer Container को Properly Align करें */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* छोटे Screens पर Conflict न हो */
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* 🌟 Fix: Footer Columns को Equal Space दें */
+.footer-contact, .footer-links, .footer-social {
+    flex: 1;
+    min-width: 250px; /* Minimum Width Set करें */
+}
+
+/* 🌟 Fix: Email और Links के बीच Space दें */
+.footer-contact p {
+    margin-bottom: 10px; /* Email और Next Element के बीच Space */
+    word-wrap: break-word; /* लंबा Email Wrap हो */
+}
+
+/* 🌟 Footer Headings */
+.footer-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 5px rgba(0, 255, 0, 0.7); /* Soft Glow Effect */
+}
+
+/* 🌟 Quick Links */
+.footer-links ul {
+    
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px; /* Links के बीच Space */
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: #00ff00; /* Green Hover Effect */
+}
+
+/* 🌟 Social Media Icons Styling */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+/* 🌟 Social Media Icon Containers */
+.socialContainer {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🌟 Icon Size */
+.socialSvg {
+    width: 30px;
+    height: 30px;
+}
+
+/* 🌟 Hover Effects */
+.socialContainer:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* 🌟 Different Colors on Hover */
+.containerOne:hover { background-color: #1877F2; }  /* Facebook */
+.containerTwo:hover { background-color: #d62976; }  /* Instagram */
+.containerThree:hover { background-color: #FF0000; }  /* YouTube */
+.containerFour:hover { background-color: #25D366; }  /* WhatsApp */
+
+
+/* 🌟 Copyright Text */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 🌟 Hero Section Styling */
+#hero {
+    position: relative;
+    background: url("../images/contact2.webp") no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark Overlay for Better Visibility */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    font-size: 1.5rem;
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.7);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 🌟 Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* 🌟 Contact Form Section */
+#contact-form {
+    width: 50%;
+    margin: 50px auto;
+    padding: 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1); /* Glassmorphism Effect */
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    animation: slideIn 1s ease-in-out;
+}
+
+/* 🌟 Slide-in Animation */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌟 Form Fields */
+.form-group {
+    position: relative;
+    margin: 20px 0;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    background: rgba(25, 25, 25, 0.1);
+    border: 2px solid rgba(25, 25, 25, 0.2);
+    outline: none;
+    color: black;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Fix: Text in Message Field is now Visible */
+textarea {
+    height: 120px;
+    resize: none;
+    color: black;
+}
+
+/* 🌟 Fix: Floating Labels */
+label {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease-in-out;
+    font-size: 0.9rem;
+    
+}
+
+input:focus ~ label, textarea:focus ~ label,
+input:not(:placeholder-shown) ~ label, textarea:not(:placeholder-shown) ~ label {
+    top: -20px;
+    left: 20px;
+    font-size: 1rem;
+    color: #00ffcc;
+    text-shadow: 2px 2px 15px black;
+}
+
+/* 🌟 Submit Button */
+.submit-btn {
+    padding: 12px 20px;
+    background: #00ffccf0;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+/* 🌟 Hover & Ripple Effect */
+.submit-btn:hover {
+    background: #00e6b8;
+    transform: scale(1.05);
+    box-shadow: 5px 5px 5px black;
+}
+
+.submit-btn:active {
+    transform: scale(0.95);
+}
+
+/* ✅ Responsive Design Fix */
+@media (max-width: 768px) {
+    #contact-form {
+        width: 80%;
+    }
+}
+
+/* 🌟 Contact Details Section */
+#contact-details {
+    background: rgba(232, 232, 232, 0.2); /* Semi-transparent */
+    backdrop-filter: blur(10px);
+    padding: 50px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* 🌟 Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* 🌟 Heading */
+#contact-details h2 {
+    font-size: 28px;
+    color: rgb(107, 107, 107);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* 🌟 Details Grid */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* 🌟 Detail Box */
+.detail-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🌟 Hover Effect - 3D Look */
+.detail-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 🌟 Icons */
+.detail-box i {
+    font-size: 32px;
+    color: rgb(33, 33, 33);
+    margin-bottom: 10px;
+}
+
+/* 🌟 Detail Titles */
+.detail-box h3 {
+    font-size: 20px;
+    color: rgb(33, 33, 33);
+    margin-bottom: 5px;
+}
+
+/* 🌟 Detail Text */
+.detail-box p {
+    font-size: 16px;
+    color: rgb(107, 107, 107);
+    margin-bottom: 5px;
+}
+
+.detail-box p {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    text-align: center; /* Center Alignment */
+}
+
+/* 🌟 Links */
+.detail-box a {
+    color: rgb(33, 33, 33);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* 🌟 Fix for Link */
+.detail-box a {
+    display: inline-block;
+    word-break: break-word;
+    max-width: 100%;
+    text-align: center;
+}
+
+/* 🌟 Link Hover */
+.detail-box a:hover {
+    color: rgb(0, 255, 0);
+}
+
+
+/* 🌟 Google Map Section Styling */
+#google-map {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.map-container {
+    width: 100%;
+    height: 400px;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}

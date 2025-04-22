@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+ 
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">  <!-- 🟢 ✅ Correct -->
+{% endblock extrastyle %}
+
+<!-- 🌟 Search Bar for Menu -->
+<section id="menu-search">
+    <input type="text" id="search-input" placeholder="🔍 Search for a dish..." onkeyup="searchMenu()">
+</section>
+ 
+<!-- 🌟 Menu Categories Section -->
+<section id="menu-categories">
+    <h2>📋 Our Menu</h2>
+    <div class="category-tabs">
+        <button class="tab active" onclick="filterMenu('all')">All</button>
+        {% for category in categories %}  <!-- ✅ Fix: "categories" lowercase me likhna hoga -->
+            <button class="tab" onclick="filterMenu('{{ category.name|slugify }}')">
+                {{ category.name }}
+            </button>
+        {% endfor %}
+    </div>
+    
+</section>
+        
+
+<!-- 🌟 Food Items Grid Section -->
+<section id="menu-items">
+    <div class="menu-container">
+        {% for item in items %}
+        <div class="menu-item {{ item.category.name|slugify }}">
+            <div class="menu-card">
+                <div class="menu-front">
+                    <img src="{{ item.image.url }}" alt="{{ item.name }}">
+                    <h3>{{ item.name }}</h3>
+                    <p class="price">₹{{ item.price }}</p>
+                </div>
+                <div class="menu-back">
+                    <p>{{ item.description }}</p>
+                    <a href="{% url 'add_to_cart' item.id %}" class="add-to-cart">🛒 Add to Cart</a>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% block extra_js %}
+<script src="{% static 'js/menu.js' %}"></script>  <!-- 🟢 ✅ Correct -->
+
+{% endblock %}
+<script>
+    function checkout() {
+        alert("Proceeding to checkout...");
+    }
+</script>
+
+{% endblock %}
+
+
+
+
+
+

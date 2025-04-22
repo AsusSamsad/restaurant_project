@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'Icons/logo.png' %}">  
+    
+    <style>
+        .cart-nav-link {
+          position: relative;
+          display: inline-block;
+          text-decoration: none;
+          color: #fff;
+          font-weight: bold;
+          padding: 10px 20px;
+          backdrop-filter: blur(10px);
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 15px;
+          box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+      
+        .cart-nav-link:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 5px black;
+        }
+      
+        .cart-badge {
+          position: absolute;
+          top: -5px;
+          right: -5px;
+          background: rgba(255, 0, 0, 0.6);
+          color: white;
+          font-size: 12px;
+          padding: 4px 8px;
+          border-radius: 50%;
+          box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+          backdrop-filter: blur(5px);
+        }
+      </style>
+      
+</head>
+<body>
+
+     <!-- 🌟 Navbar Section Start -->
+<section id="navbar-section">
+    <nav class="navbar">
+        <a href="{% url 'cart' %}" class="cart-nav-link">
+            🛒 Cart <span class="cart-badge">{{ cart_count }}</span>
+        </a>
+        <!-- Logo (Left Side) -->
+        <div class="logo">🍽️ MyRestaurant</div>
+
+        <!-- Navigation Links (Right Side) -->
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}" target="_blank" rel="noopener noreferrer">Home</a></li>
+            <li class="dropdown">
+                <a href="{% url 'menu' %}">Menu ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Light Food</a></li>
+                    <li><a href="#">Big Meals</a></li>
+                    <li><a href="#">Dessert</a></li>
+                    <li><a href="#">Drinks</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'order' %}" target="_blank">Order</a></li>
+            <li><a href="{% url 'reservation' %}" target="_blank">Reservations</a></li>
+            <li><a href="{% url 'contact' %}" target="_blank">Contact</a></li>
+            <li><a href="{% url 'about' %}" target="_blank">About</a></li>
+        </ul>
+
+        <!-- Hamburger Menu (Mobile View) -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+</section>
+<!-- 🌟 Navbar Section End -->
+    </nav>
+
+    <!-- 🔹 Page Content -->
+    <div>
+        {% block content %}
+        
+
+        
+        {% endblock %}
+    </div>
+
+
+    <!-- 🌟 Footer Section Start -->
+<footer id="footer">
+    <div class="footer-container">
+        <!-- Left Column: Contact Info -->
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>📍 Prayraj uttar pardesh kareli</p>
+            <p>📞 +91 8318184667</p>
+            <p>📧 Sikandarkhan8318187667@gmail.com</p>
+        </div>
+
+        <!-- Middle Column: Quick Links -->
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'menu' %}">Menu</a></li>
+                <li><a href="{% url 'order' %}">Order</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Right Column: Social Media Links -->
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <div class="socialContainer containerOne">
+                    <a href="https://www.facebook.com/share/14xPWm7eqm/"><img src="{% static '/icons/facebook.svg' %}" class="socialSvg" alt="Facebook"></a>
+                </div>
+                <div class="socialContainer containerTwo">
+                    <a href="https://www.instagram.com/khushbar_accent01?igsh=ZjhmanVwdjU1M3Ri "><img src="{% static '/icons/instagram.svg' %}" class="socialSvg" alt="Instagram"></a>
+                </div>
+                <div class="socialContainer containerThree">
+                    <a href="https://www.youtube.com/"><img src="{% static '/icons/youtube.svg' %}" class="socialSvg" alt="YouTube"></a>
+                </div>
+                <div class="socialContainer containerFour">
+                    <a href="https://wa.me/8318184667"><img src="{% static '/icons/whatsapp.svg' %}" class="socialSvg" alt="WhatsApp"></a>
+                </div>
+            </div>
+        </div>
+        📌 Step 3: Check करें कि I
+
+    <!-- Copyright Text -->
+    <div class="footer-bottom">
+        <p>© 2025 Food Place. All Rights Reserved.</p>
+    </div>
+</footer>
+<!-- 🌟 Footer Section End -->
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,462 @@
+/* 🌟 Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 5%;
+    background: rgba(0, 50, 0, 0.8); /* Green Glass Effect */
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    position: sticky;
+    top: 0;
+    width: 90%;
+    margin: 10px auto;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* 🌟 Logo Styling */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+/* 🌟 Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    background: linear-gradient(145deg, #00ff00, #007700);
+    box-shadow: 3px 3px 8px rgba(0, 255, 0, 0.5);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* 🌟 Hover Effect */
+.nav-links li a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+}
+
+/* 🌟 Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: rgba(0, 50, 0, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+    box-shadow: 0 4px 10px rgba(0, 255, 0, 0.5);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* 🌟 Dropdown Menu Fix */
+.dropdown-menu li {
+    margin-bottom: 5px; /* Items के बीच Space */
+}
+
+.dropdown-menu li:last-child {
+    margin-bottom: 0; /* Last Item के नीचे Extra Space न हो */
+}
+
+/* 🌟 Dropdown Items Spacing */
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 15px; /* अंदर Space बढ़ाएँ */
+    border-radius: 8px;
+}
+
+
+/* 🌟 Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+/* 🌟 Mobile Responsive Navbar */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 5%;
+        background: rgba(0, 50, 0, 0.9);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* 🌟 Hamburger Animation */
+    .hamburger.active {
+        transform: rotate(90deg);
+    }
+}
+
+
+/* 🌟 Footer Section */
+#footer {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px); /* Glassmorphism Effect */
+    color: white;
+    padding: 50px 10%;
+    border-radius: 15px 15px 0 0;
+}
+
+/* 🌟 Fix: Footer Container को Properly Align करें */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* छोटे Screens पर Conflict न हो */
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* 🌟 Fix: Footer Columns को Equal Space दें */
+.footer-contact, .footer-links, .footer-social {
+    flex: 1;
+    min-width: 250px; /* Minimum Width Set करें */
+}
+
+/* 🌟 Fix: Email और Links के बीच Space दें */
+.footer-contact p {
+    margin-bottom: 10px; /* Email और Next Element के बीच Space */
+    word-wrap: break-word; /* लंबा Email Wrap हो */
+}
+
+/* 🌟 Footer Headings */
+.footer-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 5px rgba(0, 255, 0, 0.7); /* Soft Glow Effect */
+}
+
+/* 🌟 Quick Links */
+.footer-links ul {
+    
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px; /* Links के बीच Space */
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: #00ff00; /* Green Hover Effect */
+}
+
+/* 🌟 Social Media Icons Styling */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+/* 🌟 Social Media Icon Containers */
+.socialContainer {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🌟 Icon Size */
+.socialSvg {
+    width: 30px;
+    height: 30px;
+}
+
+/* 🌟 Hover Effects */
+.socialContainer:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* 🌟 Different Colors on Hover */
+.containerOne:hover { background-color: #1877F2; }  /* Facebook */
+.containerTwo:hover { background-color: #d62976; }  /* Instagram */
+.containerThree:hover { background-color: #FF0000; }  /* YouTube */
+.containerFour:hover { background-color: #25D366; }  /* WhatsApp */
+
+
+/* 🌟 Copyright Text */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* 
+/* 🌟 Menu Categories Section */
+#menu-categories {
+    text-align: center;
+    padding: 30px;
+}
+
+/* 🌟 Category Tabs */
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Ensure Buttons Wrap in Small Screens */
+}
+
+/* 🌟 Tabs Style */
+.tab {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: rgba(51, 52, 91, 0.929);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* 🌟 Active Tab */
+.tab.active {
+    background: green;
+    color: white;
+}
+                                     
+/* 🌟 Hover Effect */
+.tab:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+                                        /* Food Items Grid Section  im123 */
+/* 🌟 General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+
+
+
+/* 🌟 Search Bar Styling (Glassmorphism Effect) */
+#menu-search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    width: 60%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    text-align: center;
+    
+    
+    /* 🌟 Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.1);  /* Light Transparent White */
+    backdrop-filter: blur(10px);  /* Blur Effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Soft Glow Effect */
+    
+    color: black;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    #search-input {
+        width: 80%;
+    }
+}
+
+/* Placeholder Color */
+#search-input::placeholder {
+    color: rgba(25, 2, 25, 0.7);
+}
+
+/* Hover & Focus Effect */
+#search-input:focus {
+    border: 2px solid rgba(255, 204, 0, 0.7);  /* Yellow Border */
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.8); /* Yellow Glow */
+    background: rgba(255, 255, 255, 0.2);
+} 
+
+
+/* 🌟 Food Items Grid - Responsive Design */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 🌟 Menu Item Card */
+.menu-card {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    perspective: 1000px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🌟 Flip Effect */
+.menu-front, .menu-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease-in-out;
+    border-radius: 12px;
+}
+
+/* 🌟 Front Side */
+.menu-front {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.menu-front img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-card:hover .menu-front img {
+    transform: scale(1.2);
+}
+
+/* 🌟 Back Side */
+.menu-back {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.menu-card:hover .menu-front {
+    transform: rotateY(180deg);
+}
+
+.menu-card:hover .menu-back {
+    transform: rotateY(0deg);
+}
+
+/* 🌟 Price */
+.price {
+    font-size: 18px;
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/* 🌟 Add to Cart Button */
+.add-to-cart {
+    background: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-to-cart:hover {
+    background: #218838;
+}
+
+
+/* 🌟 Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* 🌟 Responsive Fixes */
+@media screen and (max-width: 1024px) {
+    .menu-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* 🌟 Cart Section Styling */
+#cart {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 30px;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    font-size: 16px;
+    padding: 5px;
+    color: #01250c;
+}
+
+
+

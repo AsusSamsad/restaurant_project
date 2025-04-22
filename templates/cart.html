@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% block style %}
+<style>
+    /* Cart Section Container */
+    #cart {
+        background: rgba(245, 245, 245, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 30px;
+        margin: 40px auto;
+        width: 90%;
+        max-width: 800px;
+        box-shadow: 0 0 15px rgba(0, 255, 128, 0.4) , 0 0 3px rgba(0, 0, 0, 0.4);
+        color: black;
+        text-shadow: 0 0 5px limegreen;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    
+    /* Cart Heading */
+    #cart h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        text-shadow: 0 0 5px limegreen;
+        color: black;
+    }
+    
+    /* Cart Items List */
+    #cart ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    #cart li {
+        margin: 15px 0;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    
+    #cart li:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 5px #000;
+    }
+    
+    /* Remove Button */
+    .remove-btn {
+        color: #ff4b4b;
+        font-weight: bold;
+        text-decoration: none;
+        margin-left: 10px;
+        transition: color 0.2s ease;
+    }
+    
+    .remove-btn:hover {
+        color: #ff0000;
+        text-shadow: 0 0 5px red;
+    }
+    
+    /* Total Price */
+    #cart #total-price {
+        font-size: 24px;
+        margin-top: 20px;
+        font-weight: bold;
+        text-shadow: 0 0 4px lime, 0 0 4px rgba(0, 0, 0, 0.6);
+        color: #fff;
+    }
+    
+    /* Checkout Button */
+    #cart .btn-success {
+        display: inline-block;
+        margin-top: 20px;
+        background: linear-gradient(145deg, #88ffb0, #5be496);
+        color: black;
+        font-weight: bold;
+        border: none;
+        padding: 14px 28px;
+        border-radius: 30px;
+        box-shadow: 0 0 10px rgba(0, 255, 128, 0.6);
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+    
+    #cart .btn-success:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 5px #000;
+    }
+    </style>
+    
+{% endblock %}
+
+<section id="cart">
+    <h2>🛒 Your Cart</h2>
+
+    {% if cart %}
+        <ul>
+            {% for item_id, item in cart.items %}
+                <li>
+                    {{ item.name }} x{{ item.quantity }} = ₹{{ item.price|floatformat:2 }} × {{ item.quantity }} = ₹{{ item.price|floatformat:2|add:item.quantity }}
+                    <a href="{% url 'remove_from_cart' item_id %}" class="remove-btn">❌ Remove</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h3 id="total-price">Total: ₹{{ total }}</h3>
+        <a href="{% url 'order' %}" class="btn btn-success">Proceed to Checkout</a>
+    {% else %}
+        <p>🧺 Your cart is empty</p>
+    {% endif %}
+</section> 
+
+{% endblock %}

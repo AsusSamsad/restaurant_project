@@ -1,0 +1,146 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+
+<!-- 🌟 Hero Section Start -->
+<section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>WELCOME TO FOOD PLACE</h1>
+        <p>Experience the taste of delicious food and luxury dining.</p>
+        <div class="hero-buttons">
+            <a href="#" class="btn">View Menu</a>
+            <a href="#" class="btn">Book a Table</a>
+        </div>
+    </div>
+</section>
+<!-- 🌟 Hero Section End -->
+ 
+<!-- 🌟 About Us Section Start -->
+<section id="about-us">
+    <div class="about-content">
+        <!-- Left Side - Text -->
+        <div class="about-text">
+            <h2>🍽️ About Us - Restaurant History</h2>
+            <p>Welcome to <b>Food Haven</b>, where every meal tells a story! Our journey began with a passion for serving food that not only delights the taste buds but also brings people together.</p>
+            <p>Inspired by the rich flavors of traditional and modern cuisines, we created a menu that satisfies every craving from fresh, healthy salads to rich, aromatic biryanis.</p>
+            <p>At Food Haven, we believe in using only the freshest ingredients, ensuring every bite is a burst of flavor and quality.</p>
+
+            <h3>🔥 Our Specialties</h3>
+            <ul>
+                <li>🌿 <b>Fresh & Healthy Salads</b> – A perfect blend of crisp greens, fresh veggies, and signature dressings.</li>
+                <li>🍛 <b>Authentic Biryani</b> – Slow-cooked to perfection, infused with rich spices and tender meat.</li>
+                <li>🍔 <b>Gourmet Burgers</b> – Juicy, handcrafted patties with fresh buns and premium toppings.</li>
+                <li>🥩 <b>Succulent Mutton Dishes</b> – Cooked with traditional techniques for rich taste and tenderness.</li>
+                <li>🍗 <b>Delicious Chicken Delights</b> – From spicy grilled to crispy fried, every dish is a masterpiece.</li>
+            </ul>
+
+        </div>
+        <!-- Right Side - Image -->
+        <div class="about-image">
+            <img src="{% static 'images/chef2.jpg' %}" alt="Chef Cooking with Team">
+        </div>
+    </div>
+</section>
+<!-- 🌟 About Us Section End -->
+
+
+<!-- 🌟 Featured Dishes Section Start -->
+<section id="featured-dishes">
+    <h2>🔥 Our Special Dishes</h2>
+    <div class="dish-container">
+        <!-- Dish Card 1 -->
+        <div class="dish-card">
+            <div class="dish-inner">
+                <div class="dish-front">
+                    <img src="{% static 'images/checken biryani.webp' %}" alt="Spicy Biryani">
+                    <h3>Spicy Biryani</h3>
+                </div>
+                <div class="dish-back">
+                    <p>Rich in flavors, made with fresh <br> spices and tender meat.</p>
+                    <p><b>Price: ₹350</b></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dish Card 2 -->
+        <div class="dish-card">
+            <div class="dish-inner">
+                <div class="dish-front">
+                    <img src="{% static 'images/checken.webp' %}" alt="Butter Chicken">
+                    <h3>Butter Chicken</h3>
+                </div>
+                <div class="dish-back">
+                    <p>Delicious creamy tomato-based curry <br> with grilled chicken.</p>
+                    <p><b>Price: ₹400</b></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dish Card 3 -->
+        <div class="dish-card">
+            <div class="dish-inner">
+                <div class="dish-front">
+                    <img src="{% static 'images/panir.webp' %}" alt="Paneer Tikka">
+                    <h3>Paneer Tikka</h3>
+                </div>
+                <div class="dish-back">
+                    <p>Grilled cottage cheese marinated <br> in spices & yogurt.</p>
+                    <p><b>Price: ₹250</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 🌟 Featured Dishes Section End -->
+
+<!-- 🌟 CTA Section Start -->
+<section id="cta">
+    <div class="cta-overlay"></div>
+    <div class="cta-container">
+        <!-- Left Side: Text -->
+        <div class="cta-text">
+            <h2>Reserve Your Table Now</h2>
+            <p>Enjoy a fine dining experience with the best flavors and ambiance.</p>
+        </div>
+
+        <!-- Right Side: Button -->
+        <div class="cta-button">
+            <a href="#" class="btn">Reserve Now</a>
+        </div>
+    </div>
+</section>
+<!-- 🌟 CTA Section End -->
+
+
+<!-- 🌟 Testimonials Section Start -->
+<section id="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-container">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card small">
+            <img src="{% static 'images/myPhoto2.jpg' %}" alt="Customer 1">
+            <p>"Best Biryani I have ever had! The aroma, the taste, and the presentation were just perfect. Highly recommended!."</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card large">
+            <img src="{% static 'images/Known.jpg' %}" alt="Customer 2">
+            <p>"Their Chicken dishes are outstanding! Super juicy and full of flavors. I can't wait to visit again!."</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card medium">
+            <img src="{% static 'images/myphoto.jpg' %}" alt="Customer 3">
+            <p>"Tried their Gourmet Burgers, and they were amazing! Crispy, juicy, and perfectly balanced flavors. Loved it!"</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+        </div>
+    </div>
+</section>
+<!-- 🌟 Testimonials Section End -->
+
+{% endblock %}
+
+

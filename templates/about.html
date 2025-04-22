@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">  <!-- 🟢 ✅ Correct -->
+{% endblock %}
+  
+ <!-- 🌟 Hero Section Start -->
+ <section id="about-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Welcome to Our Story</h1>
+        <p>Discover the journey of passion, flavors, and excellence.</p>
+    </div>
+</section>
+<!-- 🌟 Hero Section End -->
+
+<!-- 🌟 About Us Content Section -->
+<section id="about-content">
+    <div class="about-container">
+        <!-- Left Side: Text -->
+        <div class="about-text">
+            <h2>🍽️ About Our Restaurant</h2>
+            <p>Welcome to <b>Food Haven</b>, where passion meets flavors. Our journey started with a simple idea – to bring joy through exceptional food and warm hospitality.</p>
+            <p>We believe in quality ingredients, expert chefs, and a delightful dining experience. From traditional recipes to modern cuisine, we serve dishes that make every meal special.</p>
+            <p>Join us and experience the magic of delicious food with unforgettable moments.</p>
+        </div>
+
+        <!-- Right Side: Image -->
+        <div class="about-image">
+            <img src="{% static 'images/chefBhai.webp' %}" alt="Chef Cooking in Restaurant">
+        </div>
+    </div>
+</section>
+<!-- 🌟 Our Story Section -->
+<section id="our-story">
+    <div class="story-container">
+        <!-- Left Side - Text Content -->
+        <div class="story-text">
+            <h2>🍽️ Our Story</h2>
+            <p> Welcome to <b>Food Haven</b>, where flavors meet passion! 🍲
+                Founded in 2015, our restaurant started with a simple vision - to bring authentic and delightful culinary experiences to food lovers. Inspired by a deep love for food, we crafted a menu that blends traditional and modern flavors to satisfy every craving.</p>
+            <p>Our chefs craft each dish with fresh ingredients and culinary expertise to provide an unforgettable dining experience.</p>
+            <h3>🎯 Our Mission</h3>
+            <p>To serve delicious and high-quality food while maintaining an ambiance of warmth and hospitality.</p>
+            <h3>🌎 Our Vision</h3>
+            <p>We aspire to become a globally recognized restaurant, known for our signature dishes and impeccable service. Our goal is to bring people closer through food and create memories that last a lifetime.</p>
+        </div>
+
+        <!-- Right Side - Image -->
+        <div class="story-image">
+            <img src="{% static 'images/chefTeam.webp' %}" alt="Our Restaurant Kitchen">
+        </div>
+    </div>
+</section>
+
+<!-- 🌟 Meet Our Chefs Section -->
+<section id="our-chefs">
+    <div class="chefs-container">
+        <!-- Left Side: Chef Images Grid -->
+        <div class="chefs-grid">
+            <img src="{% static 'images/chef1.webp' %}" alt="Chef 1">
+            <img src="{% static 'images/chef2.webp' %}" alt="Chef 2">
+            <img src="{% static 'images/chef3.webp' %}" alt="Chef 3">
+            <img src="{% static 'images/chef4.webp' %}" alt="Chef 4">
+            <img src="{% static 'images/chef5.webp' %}" alt="Chef 5">
+            <img src="{% static 'images/chef6.webp' %}" alt="Chef 6">
+        </div>
+
+        <!-- Right Side: Text Content -->
+        <div class="chefs-info">
+            <h2>👨‍🍳 Meet Our Expert Chefs</h2>
+            <p>At <b>Food Haven</b>, our chefs are more than just cooks—they are <b>artists</b> who craft each dish with passion and precision. With <b>years of experience</b> in fine dining, our team blends <b>traditional flavors with modern techniques</b> to deliver an unforgettable culinary experience.</p>
+
+            <h3>🔥 What Makes Our Team Special?</h3>
+            <ul>
+                <li>🌟 <b>Michelin-Trained Experts:</b> Worked in some of the world's top restaurants.</li>
+                <li>👨‍🍳 <b>Passion for Perfection:</b> Every dish is prepared with the highest quality ingredients.</li>
+                <li>🎨 <b>Innovative & Creative:</b> Constantly experimenting with new flavors and presentation styles.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- 🌟 Why Choose Us Section -->
+<section id="why-choose-us">
+    <div class="container">
+        <h2>🌟 Why Choose Us?</h2>
+        <div class="features-grid">
+            <!-- Feature 1 -->
+            <div class="feature-box">
+                <img src="{% static 'images/icons/Best Quality Food.png' %}" alt="Fresh Ingredients">
+                <h3>Fresh & Organic Ingredients</h3>
+                <p>We use only fresh and organic ingredients for every dish.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-box">
+                <img src="{% static 'images/icons/Hygienic & Clean Environment.png' %}" alt="Award-Winning Chefs">
+                <h3>Award-Winning Chefs</h3>
+                <p>Our chefs are highly skilled and have won multiple awards.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-box">
+                <img src="{% static 'images/icons/Fast Service.png' %}" alt="Fast Service">
+                <h3>Fast & Efficient Service</h3>
+                <p>Get your favorite dishes served in no time!</p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="feature-box">
+                <img src="{% static 'images/icons/Affordable Prices.png' %}" alt="Affordable Prices">
+                <h3>Affordable Prices</h3>
+                <p>Enjoy gourmet meals at pocket-friendly prices.</p>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="feature-box">
+                <img src="{% static 'images/icons/customer satisfaction.png' %}" alt="Cozy Ambiance">
+                <h3>Cozy & Family-Friendly Ambiance</h3>
+                <p>Relax and enjoy your meal in a warm, inviting atmosphere.</p>
+            </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="cta">
+            <a href="{% url 'reservation' %}" class="cta-btn">📅 Book a Table Now!</a>
+        </div>
+    </div>
+</section>
+
+{% block extra_js %}
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}
+    
+
+{% endblock %}

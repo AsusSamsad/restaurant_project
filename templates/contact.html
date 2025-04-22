@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+    <!-- 🌟 Hero Section Start -->
+    <section id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>📞 Get in Touch with Us!</h1>
+            <p>We'd love to hear from you. Feel free to reach out!</p>
+        </div>
+    </section>
+    <!-- 🌟 Hero Section End -->
+    
+    <!-- 🌟 Contact Form Section Start -->
+    <section id="contact-form">
+        <h2>✉️ Contact Us</h2>
+        <p>Fill out the form below and we'll get back to you soon!</p>
+    
+        <form id="contactForm">
+            <div class="form-group">
+                <input type="text" id="name" required>
+                <label for="name">Full Name</label>
+            </div>
+    
+            <div class="form-group">
+                <input type="email" id="email" required>
+                <label for="email">Email Address</label>
+            </div>
+    
+            <div class="form-group">
+                <input type="tel" id="phone" required>
+                <label for="phone">Phone Number</label>
+            </div>
+    
+            <div class="form-group">
+                <textarea id="message" required></textarea>
+                <label for="message">Your Message</label>
+            </div>
+    
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+    <!-- 🌟 Contact Form Section End -->
+    
+    <!-- 🌟 Contact Details Section -->
+    <section id="contact-details">
+        <div class="container">
+            <h2>📍 Contact Details</h2>
+            <div class="details-grid">
+                <!-- 🏢 Address -->
+                <div class="detail-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Our Location</h3>
+                    <p>123, Kareli, Prayagraj, Uttar Pradesh</p>
+                </div>
+                
+                <!-- 📞 Phone -->
+                <div class="detail-box">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:+918318184667">+91 8318184667</a></p>
+                </div>
+    
+                <!-- ✉ Email -->
+                <div class="detail-box">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:sikandarkhan8318187667@gmail.com">sikandarkhan8318187667@gmail.com</a></p>
+                </div>
+    
+                <!-- ⏰ Opening Hours -->
+                <div class="detail-box">
+                    <i class="fas fa-clock"></i>
+                    <h3>Opening Hours</h3>
+                    <p>Mon-Sun: 10:00 AM - 11:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 🌟 Google Map Section -->
+    <section id="google-map">
+        <h2>📍 Find Us On Google Maps</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!4v1742206862810!6m8!1m7!1s0GMX5_r2Ljg95ZxYQNR9JQ!2m2!1d25.42827419138611!2d81.80681996935746!3f106.05453565995788!4f-18.270308462662854!5f0.4000000000000002" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+    <br>
+    
+    {% block extra_js %}
+        <script src="{% static 'js/contact.js' %}"></script>
+    {% endblock %}
+{% endblock %}

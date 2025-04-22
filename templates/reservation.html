@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/reservation.css' %}">
+{% endblock %}
+
+  <!-- 🌟 Reservation Multi-Step Form -->
+  <section id="reservation">
+    <div class="reservation-container">
+        <h2>📅 Table Reservation</h2>
+
+        <form id="reservation-form">
+            <!-- Step 1: User Details -->
+            <div class="form-step active">
+                <h3>👤 Your Details</h3>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+                <p class="error">⚠ Please enter your name.</p>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" required>
+                <p class="error">⚠ Please enter a valid phone number.</p>
+
+                <button type="button" class="next-btn">Next ➡</button>
+            </div>
+
+            <!-- Step 2: Seating Preferences -->
+            <div class="form-step">
+                <h3>🍽️ Select Table</h3>
+                <label for="table-type">Choose Table Type:</label>
+                <select id="table-type">
+                    <option value="Indoor">Indoor</option>
+                    <option value="Outdoor">Outdoor</option>
+                    <option value="VIP">VIP Section</option>
+                </select>
+                <br>
+                <label for="table-number">🔢 Select Table Number:</label>
+                <select id="table-number">
+                    <option value="1">Table 1</option>
+                    <option value="2">Table 2</option>
+                    <option value="3">Table 3</option>
+                    <option value="4">Table 4</option>
+                    <option value="5">Table 5</option>
+                </select>
+
+                <label for="date">📅 Select Date:</label>
+                <input type="date" id="date" required>
+                <p class="error">⚠ Please select a date.</p>
+
+                <label for="time">⏰ Select Time:</label>
+                <input type="time" id="time" required>
+                <p class="error">⚠ Please select a time.</p>
+
+                <button type="button" class="prev-btn">⬅ Back</button>
+                <button type="button" class="next-btn">Next ➡</button>
+            </div>
+
+            <!-- Step 3: Payment -->
+            <div class="form-step">
+                <h3>💳 Payment</h3>
+                <label for="payment-method">Select Payment Option:</label>
+                <select id="payment-method">
+                    <option value="cod">Cash on Delivery</option>
+                    <option value="online">Online Payment</option>
+                </select>
+
+                <button type="button" class="prev-btn">⬅ Back</button>
+                <button type="button" class="next-btn">Next ➡</button>
+            </div>
+
+            <!-- Step 4: Confirmation -->
+            <div class="form-step">
+                <h3>✅ Confirm Your Booking</h3>
+                <p><strong>Name:</strong> <span id="confirm-name"></span></p>
+                <p><strong>Phone:</strong> <span id="confirm-phone"></span></p>
+                <p><strong>Table Type:</strong> <span id="confirm-table"></span></p>
+                <p><strong>Table Number:</strong> <span id="confirm-table-number"></span></p>
+                <p><strong>Date & Time:</strong> <span id="confirm-date"></span> at <span id="confirm-time"></span></p>
+                <p><strong>Payment:</strong> <span id="confirm-payment"></span></p>
+
+                <button type="button" class="prev-btn">⬅ Back</button>
+                <button type="submit" class="submit-btn">🛎️ Confirm Booking</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- 🌟 Success Popup -->
+<div id="success-popup" class="popup">
+<div class="popup-content">
+    <h2>🎉 Booking Confirmed!</h2>
+    <p>Thank you for your reservation. See you soon!</p>
+    <button onclick="closePopup()">OK</button>
+</div>
+</div>
+
+{% block extra_js %}
+<script src="{% static 'js/reservation.js' %}"></script>  <!-- 🟢 ✅ Correct -->
+{% endblock %}
+
+{% endblock %}
